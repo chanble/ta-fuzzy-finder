@@ -6,18 +6,18 @@
 -- [MIT license](http://www.opensource.org/licenses/mit-license.php).
 
 local M = {}
+
+M.ff_path = lfs.currentdir()
 -- 
 args.register('-d', '--directory', 1, function(path)
-	if not path or type(path) ~= 'string' or path == '.' then
-		M.ff_path = lfs.currentdir()
-	else
+	if not (not path or type(path) ~= 'string' or path == '.') then
 		M.ff_path = lfs.abspath(path)
 	end
 end, 'set fuzzy finder root path')
 
-if not CURSES then
-	keys[OSX and 'mp' or 'cp'] = function() 
-		io.snapopen(M.ff_path, '*.*');
-	end
+M.fuzzyfinder = function()
+	io.snapopen(M.ff_path, '*.*');
 end
+keys[OSX and 'mp' or 'cp'] = M.fuzzyfinder
+
 return M
