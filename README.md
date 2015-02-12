@@ -26,3 +26,5 @@ run textadept:
 
 2. set your project path by `-d` or `--directory` option:
 `textadept -d /your/project/path`
+
+then you can press `ctrl-p`(win or linux) `cmd-p`(mac) 
