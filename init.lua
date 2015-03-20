@@ -16,7 +16,7 @@ args.register('-d', '--directory', 1, function(path)
 end, 'set fuzzy finder root path')
 
 M.fuzzyfinder = function()
-	io.snapopen(M.ff_path, '*.*');
+	io.snapopen(M.ff_path, {folders = {"%..*$"}})
 end
 keys[OSX and 'mp' or 'cp'] = M.fuzzyfinder
 
