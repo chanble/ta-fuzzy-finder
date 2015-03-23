@@ -8,7 +8,7 @@ local M = {}
 local keys = keys
 
 M.fuzzy_finder = require 'fuzzy_finder.fuzzyfinder'
-local filter = {folders = {"%..*$"}}
+local filter = {extensions = {}, folders = {"^%.", 'node_modules'}}
 keys[OSX and 'mp' or 'cp'] = {M.fuzzy_finder.show, filter}
 
 return M
