@@ -4,20 +4,11 @@
 -- The [source](https://github.com/chanble/ta-fuzzy-finder) is on GitHub,
 -- released under the
 -- [MIT license](http://www.opensource.org/licenses/mit-license.php).
-
 local M = {}
+local keys = keys
 
-M.ff_path = lfs.currentdir()
--- 
-args.register('-d', '--directory', 1, function(path)
-	if not (not path or type(path) ~= 'string' or path == '.') then
-		M.ff_path = lfs.abspath(path)
-	end
-end, 'set fuzzy finder root path')
-
-M.fuzzyfinder = function()
-	io.snapopen(M.ff_path, {folders = {"%..*$"}})
-end
-keys[OSX and 'mp' or 'cp'] = M.fuzzyfinder
+M.fuzzy_finder = require 'fuzzy_finder.fuzzyfinder'
+local filter = {folders = {"%..*$"}}
+keys[OSX and 'mp' or 'cp'] = {M.fuzzy_finder.show, filter}
 
 return M
