@@ -22,6 +22,7 @@ local filter = {
 	extensions = {'phar'}, --hidden files
 	folders = {"^%.", 'node_modules', 'vendor'} --hidden folders
 }
+keys[OSX and 'mp' or 'cp'] = {fuzzy_finder.show, filter}
 ```
 in your `.textadept/ini.lua`
 
