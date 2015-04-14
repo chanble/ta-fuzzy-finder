@@ -19,7 +19,4 @@ function M.show(filter)
 	io.snapopen(M.ff_path, filter)
 end
 
-local filter = {extensions = {}, folders = {"^%.", 'node_modules'}}
-keys[OSX and 'mp' or 'cp'] = {M.show, filter}
-
 return M
