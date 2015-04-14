@@ -14,7 +14,8 @@ Download a [zipped](https://github.com/chanble/ta-fuzzy-finder/archive/master.zi
   
   `git clone https://github.com/chanble/ta-fuzzy-finder.git fuzzy_finder`
   
-Put ```
+Put 
+```
 local fuzzy_finder = require 'fuzzy_finder'
 --fuzzy finder
 local filter = {
