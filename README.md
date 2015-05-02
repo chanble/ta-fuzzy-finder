@@ -13,9 +13,6 @@ Download a [zipped](https://github.com/chanble/ta-fuzzy-finder/archive/master.zi
   `cd ~/.textadept/modules`
   
   `git clone https://github.com/chanble/ta-fuzzy-finder.git fuzzy_finder`
-  
-Put `local fuzzy_finder = require 'fuzzy_finder'`
-=======
 Put 
 ```
 local fuzzy_finder = require 'fuzzy_finder'
