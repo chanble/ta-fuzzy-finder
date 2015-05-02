@@ -16,7 +16,13 @@ args.register('-d', '--directory', 1, function(path)
 end, 'set fuzzy finder root path')
 
 function M.show(filter)
+	local folders_filter = {}
+	for i,v in ipairs(filter.folders) do
+		folders_filter[i] = v
+		filter.folders[i] = M.ff_path .. '/' .. v
+	end
 	io.snapopen(M.ff_path, filter)
+	filter.folders = folders_filter
 end
 
 return M
