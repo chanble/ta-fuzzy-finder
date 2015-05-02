@@ -15,7 +15,17 @@ Download a [zipped](https://github.com/chanble/ta-fuzzy-finder/archive/master.zi
   `git clone https://github.com/chanble/ta-fuzzy-finder.git fuzzy_finder`
   
 Put `local fuzzy_finder = require 'fuzzy_finder'`
-in your `.textadept/ini.lua`
+=======
+Put 
+```
+local fuzzy_finder = require 'fuzzy_finder'
+--fuzzy finder
+local filter = {
+	extensions = {'phar'}, --hidden files
+	folders = {"^%.", 'node_modules', 'vendor'} --hidden folders
+}
+keys[OSX and 'mp' or 'cp'] = {fuzzy_finder.show, filter}
+```
 
 usage
 =====
