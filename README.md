@@ -23,6 +23,7 @@ local filter = {
 }
 keys[OSX and 'mp' or 'cp'] = {fuzzy_finder.show, filter}
 ```
+in your `.textadept/ini.lua`
 
 usage
 =====
